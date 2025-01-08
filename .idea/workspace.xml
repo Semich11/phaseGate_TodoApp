@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/LogoutService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/model/Todo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/model/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/model/UserPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/model/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/repository/TodoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/repository/TokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/dto/request/TodoRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/dto/request/UserRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/dto/response/TodoResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/dto/response/UserResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/TodoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/JWTService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/MyUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/TodoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/TodoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/academy/learnprogramming/TodoServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2qA3FvTjA9uAONAC4fHAlZtukyg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "JUnit.TodoServiceTest (1).executor": "Run",
+    "JUnit.TodoServiceTest.executor": "Run",
+    "JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanATodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanCreateATodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanDeleteATodoById.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanGetAllTodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanUpdateATodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanUpdateAnExistingTodo.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.phasegateProject01_mavenTodo [clean...].executor": "Run",
+    "Maven.phasegateProject01_mavenTodo [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.App.executor": "Run",
+    "full.screen.before.presentation.mode": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="academy.learnprogramming.dto.response" />
+      <recent name="academy.learnprogramming.config" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.App">
+    <configuration name="TodoServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phasegateProject01_mavenTodo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="academy.learnprogramming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="academy.learnprogramming" />
+      <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phasegateProject01_mavenTodo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="academy.learnprogramming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="academy.learnprogramming" />
+      <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
+      <option name="METHOD_NAME" value="testThatDeleteATodoByIdThrowsRuntimeException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoServiceTest.testThatUserCanDeleteATodoById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phasegateProject01_mavenTodo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="academy.learnprogramming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="academy.learnprogramming" />
+      <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
+      <option name="METHOD_NAME" value="testThatUserCanDeleteATodoById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoServiceTest.testThatUserCanUpdateAnExistingTodo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="phasegateProject01_mavenTodo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="academy.learnprogramming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="academy.learnprogramming" />
+      <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
+      <option name="METHOD_NAME" value="testThatUserCanUpdateAnExistingTodo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="phasegateProject01_mavenTodo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="academy.learnprogramming.App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="academy.learnprogramming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.TodoServiceTest (1)" />
+      <item itemvalue="JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" />
+      <item itemvalue="JUnit.TodoServiceTest.testThatUserCanDeleteATodoById" />
+      <item itemvalue="JUnit.TodoServiceTest.testThatUserCanUpdateAnExistingTodo" />
+      <item itemvalue="Spring Boot.App" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.App" />
+        <item itemvalue="JUnit.TodoServiceTest (1)" />
+        <item itemvalue="JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" />
+        <item itemvalue="JUnit.TodoServiceTest.testThatUserCanDeleteATodoById" />
+        <item itemvalue="JUnit.TodoServiceTest.testThatUserCanUpdateAnExistingTodo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="" />
+      <created>1734091454177</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734091454177</updated>
+      <workItem from="1734091455359" duration="3259000" />
+      <workItem from="1734335137757" duration="2847000" />
+      <workItem from="1734339500543" duration="3529000" />
+      <workItem from="1734359855062" duration="4827000" />
+      <workItem from="1734429434045" duration="11521000" />
+      <workItem from="1734499592804" duration="13987000" />
+      <workItem from="1734596173932" duration="5977000" />
+      <workItem from="1734663697606" duration="11938000" />
+      <workItem from="1734709981781" duration="19574000" />
+      <workItem from="1735044277894" duration="11223000" />
+      <workItem from="1735398669055" duration="8124000" />
+      <workItem from="1735458534929" duration="29295000" />
+      <workItem from="1736176830008" duration="30315000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/model/Token.java</url>
+          <line>31</line>
+          <properties class="academy.learnprogramming.data.model.Token" method="getToken">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
