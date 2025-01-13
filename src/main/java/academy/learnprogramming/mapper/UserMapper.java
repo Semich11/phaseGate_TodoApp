@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class UserMapper {
     public Users toEntity(UserRequestDto request) {
         Users user = new Users();
-        user.setUsername(request.getUsername());
+        user.setUsername(request.getEmail());
         user.setPassword(request.getPassword());
         return user;
     }

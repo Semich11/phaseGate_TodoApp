@@ -56,7 +56,7 @@ public class JWTService {
     }
 
 
-    public String extractUserName(String token) {
+    public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
@@ -75,14 +75,14 @@ public class JWTService {
 
 
     public boolean validateToken(String token, UserDetails userDetails) {
-        final String userName = extractUserName(token);
+        final String username = extractUsername(token);
 
         if (isTokenExpired(token)) {
             updateTokenStatus(token);
             return false;
         }
 
-        return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token));
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
     
     public boolean isTokenExpired(String token) {

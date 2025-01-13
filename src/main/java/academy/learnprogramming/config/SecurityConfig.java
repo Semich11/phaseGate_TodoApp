@@ -45,8 +45,6 @@ public class SecurityConfig {
                         .logoutUrl("/logout")
                         .addLogoutHandler(logoutService)
                 )
-
-
                 .build();
     }
 

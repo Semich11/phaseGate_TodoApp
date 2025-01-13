@@ -23,6 +23,10 @@ public class UserPrincipal implements UserDetails {
         return user.getId();
     }
 
+    public String getEmail(){
+        return user.getEmail();
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority("USER"));

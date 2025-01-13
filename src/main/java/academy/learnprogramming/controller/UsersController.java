@@ -1,21 +1,21 @@
 package academy.learnprogramming.controller;
 
 import academy.learnprogramming.data.model.Users;
+import academy.learnprogramming.dto.response.ApiResponse;
 import academy.learnprogramming.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+
+import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 public class UsersController {
     @Autowired
     private UserService userService;
-
-    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
     @GetMapping("/")
     public String greet(HttpServletRequest request) {
@@ -23,9 +23,10 @@ public class UsersController {
     }
 
     @PostMapping("/register")
-    public String register(@RequestBody Users user) {
-        user.setPassword(encoder.encode(user.getPassword()));
-        return userService.registerUser(user);
+    public ResponseEntity<?> register(
+            @RequestBody Users user
+    ) {
+        return new ResponseEntity<>(new ApiResponse(true, userService.registerUser(user)), OK);
     }
 
     @PostMapping("/login")
@@ -33,4 +34,11 @@ public class UsersController {
         System.out.println(user);
         return userService.verify(user);
     }
+
+    @GetMapping("/error")
+    public ResponseEntity<?> throwException() {
+        return new ResponseEntity<>(new ApiResponse(true, userService.throwException()), OK);
+    }
+
+
 }

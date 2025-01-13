@@ -4,19 +4,25 @@ import academy.learnprogramming.data.model.Token;
 import academy.learnprogramming.data.model.Users;
 import academy.learnprogramming.data.repository.TokenRepository;
 import academy.learnprogramming.data.repository.UserRepository;
+import academy.learnprogramming.validators.ObjectValidator;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
     @Autowired
     private  UserRepository userRepository;
+
+    private final  ObjectValidator<Users> userValidator;
 
     @Autowired
     private AuthenticationManager authManager;
@@ -27,7 +33,16 @@ public class UserService {
     @Autowired
     private TokenRepository tokenRepository;
 
+    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
+
+
     public String registerUser(Users user) {
+        userValidator.validate(user);
+        user.setPassword(encoder.encode(user.getPassword()));
+
+        if (userRepository.findByUsername(user.getUsername()) != null) {
+            throw new IllegalArgumentException("Registration failed. Please try again later.");
+        }
         String jwtToken = jwtService.generateToken(user.getUsername());
         userRepository.save(user);
         saveUserToken(user, jwtToken);
@@ -37,7 +52,7 @@ public class UserService {
 
     public String verify(Users user) {
 
-        Users existingUser = userRepository.findByUsername(user.getUsername());
+        Users existingUser = userRepository.findByEmail(user.getEmail());
 
         Authentication authentication =
                 authManager.authenticate(new UsernamePasswordAuthenticationToken(existingUser.getUsername(), user.getPassword()));
@@ -89,4 +104,8 @@ public class UserService {
 
     }
 
+
+    public String throwException() {
+        throw new IllegalStateException("nothing to throw");
+    }
 }
