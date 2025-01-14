@@ -33,10 +33,14 @@ public class TodosController {
         return todoServiceImpl.findAllTodo();
     }
 
-    @GetMapping("/{text}")
+    @GetMapping("/get/{text}")
     public ResponseEntity<?> getTest(@PathVariable String text){
-        String response = "Your Text: " + text;
-        return new ResponseEntity<>(new ApiResponse(true, response), OK);
+        try {
+            return new ResponseEntity<>(new ApiResponse(true, text), OK);
+        }catch (Exception e) {
+            return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
+        }
     }
+
 }
 

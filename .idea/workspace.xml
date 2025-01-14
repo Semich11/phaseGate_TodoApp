@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="GlobalExceptionHandler.&#10;I set the code to any Exception.">
+    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="Implement some exceptions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/validationConstraints/UniqueUser.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,44 +48,46 @@
     <option name="abbreviatePackageNames" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.testThatUserCanATodo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.testThatUserCanCreateATodo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.testThatUserCanDeleteATodoById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.testThatUserCanGetAllTodo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.testThatUserCanUpdateATodo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TodoServiceTest.testThatUserCanUpdateAnExistingTodo.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.phasegateProject01_mavenTodo [clean...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.phasegateProject01_mavenTodo [clean].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.App.executor&quot;: &quot;Run&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/christopherchima/Documents/quick/src/main/java/academy/learnprogramming&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "JUnit.TodoServiceTest (1).executor": "Run",
+    "JUnit.TodoServiceTest.executor": "Run",
+    "JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanATodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanCreateATodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanDeleteATodoById.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanGetAllTodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanUpdateATodo.executor": "Run",
+    "JUnit.TodoServiceTest.testThatUserCanUpdateAnExistingTodo.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.phasegateProject01_mavenTodo [clean...].executor": "Run",
+    "Maven.phasegateProject01_mavenTodo [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.App.executor": "Run",
+    "full.screen.before.presentation.mode": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/christopherchima/Documents/quick/src/main/java/academy/learnprogramming",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="academy.learnprogramming.validationConstraints" />
@@ -103,7 +101,13 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.App">
+  <component name="RunManager" selected="HTTP Request.generated-requests | #2">
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="TodoServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="phasegateProject01_mavenTodo" />
       <extension name="coverage">
@@ -135,38 +139,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TodoServiceTest.testThatUserCanDeleteATodoById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="phasegateProject01_mavenTodo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="academy.learnprogramming.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="academy.learnprogramming" />
-      <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
-      <option name="METHOD_NAME" value="testThatUserCanDeleteATodoById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TodoServiceTest.testThatUserCanUpdateAnExistingTodo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="phasegateProject01_mavenTodo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="academy.learnprogramming.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="academy.learnprogramming" />
-      <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
-      <option name="METHOD_NAME" value="testThatUserCanUpdateAnExistingTodo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="phasegateProject01_mavenTodo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="academy.learnprogramming.App" />
@@ -181,19 +153,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="HTTP Request.generated-requests | #1" />
+      <item itemvalue="HTTP Request.generated-requests | #2" />
       <item itemvalue="JUnit.TodoServiceTest (1)" />
       <item itemvalue="JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" />
-      <item itemvalue="JUnit.TodoServiceTest.testThatUserCanDeleteATodoById" />
-      <item itemvalue="JUnit.TodoServiceTest.testThatUserCanUpdateAnExistingTodo" />
       <item itemvalue="Spring Boot.App" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="Spring Boot.App" />
         <item itemvalue="JUnit.TodoServiceTest (1)" />
         <item itemvalue="JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" />
-        <item itemvalue="JUnit.TodoServiceTest.testThatUserCanDeleteATodoById" />
-        <item itemvalue="JUnit.TodoServiceTest.testThatUserCanUpdateAnExistingTodo" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +199,7 @@
       <workItem from="1735458534929" duration="29295000" />
       <workItem from="1736176830008" duration="49653000" />
       <workItem from="1736461975796" duration="24088000" />
-      <workItem from="1736754215256" duration="13357000" />
+      <workItem from="1736754215256" duration="17527000" />
     </task>
     <task id="LOCAL-00001" summary="First push.">
       <option name="closed" value="true" />
@@ -253,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736777351975</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implement some exceptions.">
+      <option name="closed" value="true" />
+      <created>1736842908201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736842908201</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +242,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First push." />
     <MESSAGE value="GlobalExceptionHandler.&#10;I set the code to any Exception." />
-    <option name="LAST_COMMIT_MESSAGE" value="GlobalExceptionHandler.&#10;I set the code to any Exception." />
+    <MESSAGE value="Implement some exceptions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement some exceptions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
