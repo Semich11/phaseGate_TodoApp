@@ -6,10 +6,10 @@ import academy.learnprogramming.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.OK;
 
 @RestController
@@ -26,19 +26,19 @@ public class UsersController {
     public ResponseEntity<?> register(
             @RequestBody Users user
     ) {
-        return new ResponseEntity<>(new ApiResponse(true, userService.registerUser(user)), OK);
+        try{
+            return new ResponseEntity<>(new ApiResponse(true, userService.registerUser(user)), OK);
+        }catch (IllegalArgumentException | IllegalStateException e) {
+            return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
+        }
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody Users user) {
-        System.out.println(user);
-        return userService.verify(user);
+    public ResponseEntity<?> login(@RequestBody Users user) {
+        try{
+            return new ResponseEntity<>(new ApiResponse(true, userService.verify(user)), OK);
+        }catch (IllegalArgumentException | IllegalStateException e) {
+            return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
+        }
     }
-
-    @GetMapping("/error")
-    public ResponseEntity<?> throwException() {
-        return new ResponseEntity<>(new ApiResponse(true, userService.throwException()), OK);
-    }
-
-
 }

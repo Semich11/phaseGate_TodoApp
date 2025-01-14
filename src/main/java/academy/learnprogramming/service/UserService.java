@@ -38,9 +38,10 @@ public class UserService {
 
     public String registerUser(Users user) {
         userValidator.validate(user);
+
         user.setPassword(encoder.encode(user.getPassword()));
 
-        if (userRepository.findByUsername(user.getUsername()) != null) {
+        if (userRepository.findByEmail(user.getEmail()) != null) {
             throw new IllegalArgumentException("Registration failed. Please try again later.");
         }
         String jwtToken = jwtService.generateToken(user.getUsername());

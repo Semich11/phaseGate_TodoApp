@@ -26,6 +26,7 @@ public class App
             userRepository.findAll().forEach(user -> {
                 System.out.println("Found user: " + user.getUsername());
                 System.out.println("Found password: " + user.getPassword());
+                System.out.println("Found email: " + user.getEmail());
 
             });
         };
