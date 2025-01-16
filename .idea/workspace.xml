@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="Delete Utils folder.">
+    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="created cookie from jwt for &quot;/login&quot; and &quot;/register&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/MyUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +190,7 @@
       <workItem from="1735458534929" duration="29295000" />
       <workItem from="1736176830008" duration="49653000" />
       <workItem from="1736461975796" duration="24088000" />
-      <workItem from="1736754215256" duration="45988000" />
+      <workItem from="1736754215256" duration="49304000" />
     </task>
     <task id="LOCAL-00001" summary="First push.">
       <option name="closed" value="true" />
@@ -251,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737032700604</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="created cookie from jwt for &quot;/login&quot; and &quot;/register&quot;">
+      <option name="closed" value="true" />
+      <created>1737063568779</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737063568779</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +269,8 @@
     <MESSAGE value="Trying to get pathVariables." />
     <MESSAGE value="Some changes." />
     <MESSAGE value="Delete Utils folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete Utils folder." />
+    <MESSAGE value="created cookie from jwt for &quot;/login&quot; and &quot;/register&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="created cookie from jwt for &quot;/login&quot; and &quot;/register&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

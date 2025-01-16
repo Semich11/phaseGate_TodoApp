@@ -70,7 +70,7 @@ public class UserService {
 
         Authentication authentication =
                 authManager.authenticate(new UsernamePasswordAuthenticationToken(existingUser.getUsername(), userRequestDto.getPassword()));
-        System.out.println("\n\n\n\n\n\n\n " + "Auth10: " + "\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n " + "Auth11: " + "\n\n\n\n\n\n\n\n");
 
 
         if (authentication.isAuthenticated()) {

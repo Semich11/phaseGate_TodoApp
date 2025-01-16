@@ -55,6 +55,9 @@ public class JwtFilter extends OncePerRequestFilter {
         try {
             token = parseJwt(request);
 
+            System.out.println("\n\n\n\n\n\n\n " + "doFilterInternalToken: "+ token + "\n\n\n\n\n\n\n\n");
+
+
             if (token != null) {
                 System.out.println("\n\n\n\n\n\n\n " + "Cookie token: " + token + "\n\n\n\n\n\n\n\n");
                 username = jwtService.extractUsername(token);
@@ -63,13 +66,17 @@ public class JwtFilter extends OncePerRequestFilter {
             }
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                System.out.println("\n\n\n\n\n\n\n " + "SecurityContextHolder: " + SecurityContextHolder.getContext().getAuthentication() + "\n\n\n\n\n\n\n\n");
                 UserDetails userDetails = context.getBean(MyUserDetailsService.class).loadUserByUsername(username);
+                System.out.println("\n\n\n\n\n\n\n " + "SecurityContextHolder: " + SecurityContextHolder.getContext().getAuthentication() + "\n\n\n\n\n\n\n\n");
 
-                boolean isValidToken = tokenRepository.findByToken(token)
-                        .map(t -> !t.isRevoked() && !t.isExpired())
-                        .orElse(false);
 
-                if (jwtService.validateToken(token, userDetails) && isValidToken) {
+//                boolean isValidToken = tokenRepository.findByToken(token)
+//                        .map(t -> !t.isRevoked() && !t.isExpired())
+//                        .orElse(false);
+
+                if (jwtService.validateToken(token, userDetails)) {
+                    System.out.println("\n\n\n\n\n\n\n " + "Validate: " + userDetails + "\n\n\n\n\n\n\n\n");
                     UsernamePasswordAuthenticationToken authToken =
                             new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
