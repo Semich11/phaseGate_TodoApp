@@ -1,14 +1,19 @@
 package academy.learnprogramming.service;
 
 import academy.learnprogramming.data.model.Token;
+import academy.learnprogramming.data.model.UserPrincipal;
 import academy.learnprogramming.data.repository.TokenRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseCookie;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.WebUtils;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -34,6 +39,13 @@ public class JWTService {
         }
     }
 
+    public ResponseCookie generateJwtCookie(String username) {
+        String jwt = generateToken(username);
+        return ResponseCookie.from("jwtCookie", jwt).path("/").maxAge(2 * 60 * 1000)
+                .httpOnly(false)
+                .build();
+    }
+
     public String generateToken(String username) {
         Map<String, Object> claims = new HashMap<>();
 
@@ -49,6 +61,16 @@ public class JWTService {
 
     }
 
+    public String getJwtFromCookies(HttpServletRequest request) {
+        Cookie cookie = WebUtils.getCookie(request, "jwtCookie");
+        if (cookie != null) {
+            System.out.println("COOKIE: " + cookie.getValue());
+            return cookie.getValue();
+        } else {
+            return null;
+        }
+    }
+
     private SecretKey getKey() {
 
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
@@ -57,7 +79,13 @@ public class JWTService {
 
 
     public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+        System.out.println("\n\n\n\n\n\n\n " + "Cookie token by username: "  + "\n\n\n\n\n\n\n\n");
+        try {
+            return extractClaim(token, Claims::getSubject) + "\n\nGaza!!!";
+        }catch (Exception e) {
+            System.out.println("\n\n\n\n"+e.getMessage()+ "Fowl!!! \n\n\n\n\n");
+            return "\n\n\n\n An Error occur! \n\n\n\n\n";
+        }
     }
 
     private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
@@ -84,7 +112,7 @@ public class JWTService {
 
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
-    
+
     public boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }

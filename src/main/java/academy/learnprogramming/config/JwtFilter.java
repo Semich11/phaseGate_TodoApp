@@ -28,23 +28,38 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Autowired
     private ApplicationContext context;
+
     @Autowired
     private TokenRepository tokenRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        String authHeader = request.getHeader("Authorization");
+        String requestPath = request.getRequestURI();
+        System.out.println("\n\n\n\n\n\n\n " + "shit: " + request.getRequestURI()+ "\n\n\n\n\n\n\n\n");
+
+
+        if (requestPath.startsWith("/register") || requestPath.startsWith("/login")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+        System.out.println("\n\n\n\n\n\n\n " + "doFilterInternal" + "\n\n\n\n\n\n\n\n");
+//        String authHeader = request.getHeader("Authorization");
         String token = null;
         String username = null;
 
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            token = authHeader.substring(7);
-        }
+//        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+//            token = authHeader.substring(7);
+//        }
 
         try {
+            token = parseJwt(request);
+
             if (token != null) {
+                System.out.println("\n\n\n\n\n\n\n " + "Cookie token: " + token + "\n\n\n\n\n\n\n\n");
                 username = jwtService.extractUsername(token);
+                System.out.println("\n\n\n\n\n\n\n " + "username: " + username + "\n\n\n\n\n\n\n\n");
+
             }
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -78,6 +93,10 @@ public class JwtFilter extends OncePerRequestFilter {
         }
 
         filterChain.doFilter(request, response);
+    }
+
+    private String parseJwt(HttpServletRequest request) {
+        return jwtService.getJwtFromCookies(request);
     }
 }
 

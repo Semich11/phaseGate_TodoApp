@@ -43,35 +43,42 @@ public class UserService {
 
 
     public String registerUser(UserRequestDto userRequestDto) {
+        System.out.println("\n\n\n\n\n\n\n " + userRequestDto + "\n\n\n\n\n\n\n\n");
+
         Users user = userMapper.toUserEntity(userRequestDto);
 
         userValidator.validate(user);
 
         user.setPassword(encoder.encode(user.getPassword()));
+        System.out.println("\n\n\n\n\n\n\n " + user + "\n\n\n\n\n\n\n\n");
 
         if (userRepository.findByEmail(user.getEmail()) != null) {
             throw new IllegalArgumentException("Registration failed. Please try again later.");
         }
-        String jwtToken = jwtService.generateToken(user.getUsername());
+        String jwtCookie = jwtService.generateJwtCookie(user.getUsername()).toString();
+        System.out.println("\n\n\n\n\n\n\n " + jwtCookie + "\n\n\n\n\n\n\n\n");
         userRepository.save(user);
-        saveUserToken(user, jwtToken);
-        addTokenToUser(user, jwtToken);
-        return jwtToken;
+        saveUserToken(user, jwtCookie);
+        addTokenToUser(user, jwtCookie);
+        return jwtCookie;
     }
 
     public String verify(UserRequestDto userRequestDto) {
+        System.out.println("\n\n\n\n\n\n\n " + "Auth10: " + "\n\n\n\n\n\n\n\n");
 
         Users existingUser = userRepository.findByEmail(userRequestDto.getEmail());
 
         Authentication authentication =
                 authManager.authenticate(new UsernamePasswordAuthenticationToken(existingUser.getUsername(), userRequestDto.getPassword()));
+        System.out.println("\n\n\n\n\n\n\n " + "Auth10: " + "\n\n\n\n\n\n\n\n");
+
 
         if (authentication.isAuthenticated()) {
-            String jwtToken =  jwtService.generateToken(existingUser.getUsername());
+            String jwtCookie =  jwtService.generateJwtCookie(existingUser.getUsername()).toString();
             revokeAllUserToken(existingUser);
-            Token token = saveUserToken(existingUser, jwtToken);
+            Token token = saveUserToken(existingUser, jwtCookie);
             addTokenToUser(existingUser, token.getToken());
-            return jwtToken;
+            return jwtCookie;
         }
         return "Fail";
     }

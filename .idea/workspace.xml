@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="Some changes.">
+    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="Delete Utils folder.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +193,7 @@
       <workItem from="1735458534929" duration="29295000" />
       <workItem from="1736176830008" duration="49653000" />
       <workItem from="1736461975796" duration="24088000" />
-      <workItem from="1736754215256" duration="26567000" />
+      <workItem from="1736754215256" duration="45988000" />
     </task>
     <task id="LOCAL-00001" summary="First push.">
       <option name="closed" value="true" />
@@ -237,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737005700325</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Delete Utils folder.">
+      <option name="closed" value="true" />
+      <created>1737032700604</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737032700604</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +263,8 @@
     <MESSAGE value="Implement some exceptions." />
     <MESSAGE value="Trying to get pathVariables." />
     <MESSAGE value="Some changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some changes." />
+    <MESSAGE value="Delete Utils folder." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete Utils folder." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -262,6 +277,11 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

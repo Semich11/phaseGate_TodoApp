@@ -14,6 +14,7 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.OK;
 
 @RestController
+@RequestMapping("/api")
 public class TodosController {
     @Autowired
     private TodoServiceImpl todoServiceImpl;
