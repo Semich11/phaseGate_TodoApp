@@ -34,7 +34,7 @@ public class TodosController {
     }
 
     @DeleteMapping("/get/{text}")
-    public ResponseEntity<?> getTest(@PathVariable String text){
+    public ResponseEntity<?> getTest(@PathVariable("text") String text){
         try {
             return new ResponseEntity<>(new ApiResponse(true, text), OK);
         }catch (Exception e) {
