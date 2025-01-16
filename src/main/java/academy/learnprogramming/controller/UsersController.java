@@ -1,6 +1,7 @@
 package academy.learnprogramming.controller;
 
 import academy.learnprogramming.data.model.Users;
+import academy.learnprogramming.dto.request.UserRequestDto;
 import academy.learnprogramming.dto.response.ApiResponse;
 import academy.learnprogramming.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,19 +25,19 @@ public class UsersController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(
-            @RequestBody Users user
+            @RequestBody UserRequestDto userRequestDto
     ) {
         try{
-            return new ResponseEntity<>(new ApiResponse(true, userService.registerUser(user)), OK);
+            return new ResponseEntity<>(new ApiResponse(true, userService.registerUser(userRequestDto)), OK);
         }catch (IllegalArgumentException | IllegalStateException e) {
             return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
         }
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Users user) {
+    public ResponseEntity<?> login(@RequestBody UserRequestDto userRequestDto) {
         try{
-            return new ResponseEntity<>(new ApiResponse(true, userService.verify(user)), OK);
+            return new ResponseEntity<>(new ApiResponse(true, userService.verify(userRequestDto)), OK);
         }catch (IllegalArgumentException | IllegalStateException e) {
             return new ResponseEntity<>(new ApiResponse(false, e.getMessage()), BAD_REQUEST);
         }

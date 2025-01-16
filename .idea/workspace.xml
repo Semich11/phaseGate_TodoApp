@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="Implement some exceptions.">
+    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="Trying to get pathVariables.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/model/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/dto/request/UserRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/dto/request/UserRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +58,7 @@
     "Application.App.executor": "Run",
     "HTTP Request.generated-requests | #1.executor": "Run",
     "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
     "JUnit.TodoServiceTest (1).executor": "Run",
     "JUnit.TodoServiceTest.executor": "Run",
     "JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException.executor": "Run",
@@ -101,11 +107,14 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.generated-requests | #2">
+  <component name="RunManager" selected="Spring Boot.App">
     <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="TodoServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -119,22 +128,6 @@
       <option name="PACKAGE_NAME" value="academy.learnprogramming" />
       <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="phasegateProject01_mavenTodo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="academy.learnprogramming.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="academy.learnprogramming" />
-      <option name="MAIN_CLASS_NAME" value="academy.learnprogramming.TodoServiceTest" />
-      <option name="METHOD_NAME" value="testThatDeleteATodoByIdThrowsRuntimeException" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,17 +148,17 @@
     <list>
       <item itemvalue="HTTP Request.generated-requests | #1" />
       <item itemvalue="HTTP Request.generated-requests | #2" />
+      <item itemvalue="HTTP Request.generated-requests | #3" />
       <item itemvalue="JUnit.TodoServiceTest (1)" />
-      <item itemvalue="JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" />
       <item itemvalue="Spring Boot.App" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #2" />
-        <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="Spring Boot.App" />
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="JUnit.TodoServiceTest (1)" />
-        <item itemvalue="JUnit.TodoServiceTest.testThatDeleteATodoByIdThrowsRuntimeException" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +192,7 @@
       <workItem from="1735458534929" duration="29295000" />
       <workItem from="1736176830008" duration="49653000" />
       <workItem from="1736461975796" duration="24088000" />
-      <workItem from="1736754215256" duration="17527000" />
+      <workItem from="1736754215256" duration="25741000" />
     </task>
     <task id="LOCAL-00001" summary="First push.">
       <option name="closed" value="true" />
@@ -233,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736842908201</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Trying to get pathVariables.">
+      <option name="closed" value="true" />
+      <created>1736888525586</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736888525587</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +244,8 @@
     <MESSAGE value="First push." />
     <MESSAGE value="GlobalExceptionHandler.&#10;I set the code to any Exception." />
     <MESSAGE value="Implement some exceptions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement some exceptions." />
+    <MESSAGE value="Trying to get pathVariables." />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to get pathVariables." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

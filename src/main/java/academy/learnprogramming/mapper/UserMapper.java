@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UserMapper {
-    public Users toEntity(UserRequestDto request) {
+    public Users toUserEntity(UserRequestDto request) {
         Users user = new Users();
         user.setUsername(request.getEmail());
         user.setPassword(request.getPassword());
         return user;
     }
 
-    public UserResponseDto toResponse(Users user) {
+    public UserResponseDto toUserResponse(Users user) {
         UserResponseDto response = new UserResponseDto();
         response.setId(user.getId());
         response.setUsername(user.getUsername());

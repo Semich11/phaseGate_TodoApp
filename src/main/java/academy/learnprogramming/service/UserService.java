@@ -4,6 +4,8 @@ import academy.learnprogramming.data.model.Token;
 import academy.learnprogramming.data.model.Users;
 import academy.learnprogramming.data.repository.TokenRepository;
 import academy.learnprogramming.data.repository.UserRepository;
+import academy.learnprogramming.dto.request.UserRequestDto;
+import academy.learnprogramming.mapper.UserMapper;
 import academy.learnprogramming.validators.ObjectValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +35,16 @@ public class UserService {
     @Autowired
     private TokenRepository tokenRepository;
 
+    @Autowired
+    private UserMapper userMapper;
+
+
     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
 
-    public String registerUser(Users user) {
+    public String registerUser(UserRequestDto userRequestDto) {
+        Users user = userMapper.toUserEntity(userRequestDto);
+
         userValidator.validate(user);
 
         user.setPassword(encoder.encode(user.getPassword()));
@@ -51,12 +59,12 @@ public class UserService {
         return jwtToken;
     }
 
-    public String verify(Users user) {
+    public String verify(UserRequestDto userRequestDto) {
 
-        Users existingUser = userRepository.findByEmail(user.getEmail());
+        Users existingUser = userRepository.findByEmail(userRequestDto.getEmail());
 
         Authentication authentication =
-                authManager.authenticate(new UsernamePasswordAuthenticationToken(existingUser.getUsername(), user.getPassword()));
+                authManager.authenticate(new UsernamePasswordAuthenticationToken(existingUser.getUsername(), userRequestDto.getPassword()));
 
         if (authentication.isAuthenticated()) {
             String jwtToken =  jwtService.generateToken(existingUser.getUsername());
@@ -94,7 +102,6 @@ public class UserService {
 
     }
 
-
     private void addTokenToUser(Users user, String jwtToken) {
         user = userRepository.findById(user.getId()).orElseThrow(() -> new RuntimeException("User not found"));
         List<String> tokenIds = user.getTokens();
@@ -103,10 +110,5 @@ public class UserService {
         userRepository.save(user);
         System.out.println("\n\n\n\n\n\n\nUser Tokens After: " + user.getTokens() + "\n\n\n\n\n\n\n\n");
 
-    }
-
-
-    public String throwException() {
-        throw new IllegalStateException("nothing to throw");
     }
 }
