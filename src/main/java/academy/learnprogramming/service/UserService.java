@@ -12,10 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -50,34 +52,36 @@ public class UserService {
         userValidator.validate(user);
 
         user.setPassword(encoder.encode(user.getPassword()));
-        System.out.println("\n\n\n\n\n\n\n " + user + "\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n " + "register a user" + "\n\n\n\n\n\n\n\n");
 
-        if (userRepository.findByEmail(user.getEmail()) != null) {
+        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
             throw new IllegalArgumentException("Registration failed. Please try again later.");
         }
-        String jwtCookie = jwtService.generateJwtCookie(user.getUsername()).toString();
+        String jwtCookie = jwtService.generateJwtCookie(user.getEmail()).toString();
         System.out.println("\n\n\n\n\n\n\n " + jwtCookie + "\n\n\n\n\n\n\n\n");
         userRepository.save(user);
-        saveUserToken(user, jwtCookie);
-        addTokenToUser(user, jwtCookie);
+//        saveUserToken(user, jwtCookie);
+//        addTokenToUser(user, jwtCookie);
         return jwtCookie;
     }
 
     public String verify(UserRequestDto userRequestDto) {
-        System.out.println("\n\n\n\n\n\n\n " + "Auth10: " + "\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n " + "Authentication started: " + "\n\n\n\n\n\n\n\n");
 
-        Users existingUser = userRepository.findByEmail(userRequestDto.getEmail());
+        Users existingUser = userRepository.findByEmail(userRequestDto.getEmail())
+                .orElseThrow(() -> new UsernameNotFoundException("\n\n\n\n\n\n\n\nUser not found in verify\n\n\n\n\n\n\n"));
+        ;
 
         Authentication authentication =
-                authManager.authenticate(new UsernamePasswordAuthenticationToken(existingUser.getUsername(), userRequestDto.getPassword()));
-        System.out.println("\n\n\n\n\n\n\n " + "Auth11: " + "\n\n\n\n\n\n\n\n");
+                authManager.authenticate(new UsernamePasswordAuthenticationToken(existingUser.getEmail(), userRequestDto.getPassword()));
+        System.out.println("\n\n\n\n\n\n\n " + "User Is authenticated!: " + "\n\n\n\n\n\n\n\n");
 
 
         if (authentication.isAuthenticated()) {
-            String jwtCookie =  jwtService.generateJwtCookie(existingUser.getUsername()).toString();
-            revokeAllUserToken(existingUser);
-            Token token = saveUserToken(existingUser, jwtCookie);
-            addTokenToUser(existingUser, token.getToken());
+            String jwtCookie =  jwtService.generateJwtCookie(existingUser.getEmail()).toString();
+//            revokeAllUserToken(existingUser);
+//            Token token = saveUserToken(existingUser, jwtCookie);
+//            addTokenToUser(existingUser, token.getToken());
             return jwtCookie;
         }
         return "Fail";

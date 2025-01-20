@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="created cookie from jwt for &quot;/login&quot; and &quot;/register&quot;">
+    <list default="true" id="6308d3bf-0879-4c1b-9be0-d8f61ae3038c" name="Changes" comment="Working on getting all Todo with jwt cookie.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/TodosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/data/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/JWTService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/MyUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/academy/learnprogramming/service/UserService.java" afterDir="false" />
     </list>
@@ -190,7 +192,7 @@
       <workItem from="1735458534929" duration="29295000" />
       <workItem from="1736176830008" duration="49653000" />
       <workItem from="1736461975796" duration="24088000" />
-      <workItem from="1736754215256" duration="49304000" />
+      <workItem from="1736754215256" duration="66423000" />
     </task>
     <task id="LOCAL-00001" summary="First push.">
       <option name="closed" value="true" />
@@ -256,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737063568779</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Working on getting all Todo with jwt cookie.">
+      <option name="closed" value="true" />
+      <created>1737067100975</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737067100975</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +280,8 @@
     <MESSAGE value="Some changes." />
     <MESSAGE value="Delete Utils folder." />
     <MESSAGE value="created cookie from jwt for &quot;/login&quot; and &quot;/register&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="created cookie from jwt for &quot;/login&quot; and &quot;/register&quot;" />
+    <MESSAGE value="Working on getting all Todo with jwt cookie." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on getting all Todo with jwt cookie." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -288,6 +299,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/academy/learnprogramming/controller/UsersController.java</url>
           <line>30</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/academy/learnprogramming/config/JwtFilter.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

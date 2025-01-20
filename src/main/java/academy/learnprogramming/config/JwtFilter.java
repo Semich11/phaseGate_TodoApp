@@ -36,39 +36,43 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         String requestPath = request.getRequestURI();
-        System.out.println("\n\n\n\n\n\n\n " + "shit: " + request.getRequestURI()+ "\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n " + "Request is made from: " + request.getRequestURI()+ "\n\n\n\n\n\n\n\n");
+
 
 
         if (requestPath.startsWith("/register") || requestPath.startsWith("/login")) {
             filterChain.doFilter(request, response);
+            System.out.println("\n\n\n\nRequest is made to a none (/login or /register) protected route\n\n\n\n");
             return;
         }
         System.out.println("\n\n\n\n\n\n\n " + "doFilterInternal" + "\n\n\n\n\n\n\n\n");
 //        String authHeader = request.getHeader("Authorization");
         String token = null;
-        String username = null;
+        String email = null;
 
 //        if (authHeader != null && authHeader.startsWith("Bearer ")) {
 //            token = authHeader.substring(7);
 //        }
 
         try {
+            System.out.println("\n\n\n\n\n\n\n " + "Request is made from: " + request.getRequestURI()+ "\n\n\n\n\n\n\n\n");
+
             token = parseJwt(request);
 
-            System.out.println("\n\n\n\n\n\n\n " + "doFilterInternalToken: "+ token + "\n\n\n\n\n\n\n\n");
+            System.out.println("\n\n\n\n\n\n\n " + "The cookie from the protected route: "+ token + "\n\n\n\n\n\n\n\n");
 
 
             if (token != null) {
-                System.out.println("\n\n\n\n\n\n\n " + "Cookie token: " + token + "\n\n\n\n\n\n\n\n");
-                username = jwtService.extractUsername(token);
-                System.out.println("\n\n\n\n\n\n\n " + "username: " + username + "\n\n\n\n\n\n\n\n");
+                email = jwtService.extractEmail(token);
+                System.out.println("\n\n\n\n\n\n\n " + "email: " + email + "\n\n\n\n\n\n\n\n");
 
             }
 
-            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 System.out.println("\n\n\n\n\n\n\n " + "SecurityContextHolder: " + SecurityContextHolder.getContext().getAuthentication() + "\n\n\n\n\n\n\n\n");
-                UserDetails userDetails = context.getBean(MyUserDetailsService.class).loadUserByUsername(username);
-                System.out.println("\n\n\n\n\n\n\n " + "SecurityContextHolder: " + SecurityContextHolder.getContext().getAuthentication() + "\n\n\n\n\n\n\n\n");
+                UserDetails userDetails = context.getBean(MyUserDetailsService.class).loadUserByUsername(email);
+
+                System.out.println("\n\n\n worked \n\n\n");
 
 
 //                boolean isValidToken = tokenRepository.findByToken(token)
@@ -81,6 +85,8 @@ public class JwtFilter extends OncePerRequestFilter {
                             new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authToken);
+                }else {
+                    System.out.println("\n\n\n\n\n\n\n\n\n " + "validateToken fail: " + "\n\n\n\n\n\n\n\n");
                 }
             }
         } catch (ExpiredJwtException e) {
@@ -88,13 +94,13 @@ public class JwtFilter extends OncePerRequestFilter {
 
             if (token != null) {
                 Optional<Token> tokenOptional = tokenRepository.findByToken(token);
-                tokenOptional.ifPresent(t -> {
-                    if (!t.isExpired() || !t.isRevoked()) {
-                        t.setExpired(true);
-                        t.setRevoked(true);
-                        tokenRepository.save(t);
-                        System.out.println("Token expired and revoked. Updated in DB.");
-                    }
+                tokenOptional.ifPresent(t -> {                         System.out.println("Token expired and revoked. Updated in DB.");
+
+//                    if (!t.isExpired() || !t.isRevoked()) {
+//                        t.setExpired(true);
+//                        t.setRevoked(true);
+//                        tokenRepository.save(t);
+//                    }
                 });
             }
         }
